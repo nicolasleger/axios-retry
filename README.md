@@ -30,7 +30,7 @@ axios.get('http://example.com/test') // The first request fails and the second r
   });
 
 // Exponential back-off retry delay between requests
-axiosRetry(axios, { retryDelay: axiosRetry.exponentialDelay});
+axiosRetry(axios, { retryDelay: axiosRetry.exponentialDelay(3) });
 
 // Custom retry delay
 axiosRetry(axios, { retryDelay: (retryCount) => {
